@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRESENTACIONES EN HTML Y CSS</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: black;
+            color: blue;
+        }
+
+        section {
+            display: none; /* Oculta todas las secciones */
+            padding: 60px 40px;
+            min-height: 100vh;
+            text-align: center;
+            color: beige;
+        }
+
+        section:target {
+            display: block;
+        }
+
+        nav {
+            margin-top: 40px;
+        }
+
+        nav a {
+            display: inline-block;
+            background-color: blanchedalmond;
+            color: brown;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 0 10px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background-color: chocolate;
+            color: white;
+        }
+
+        ul li::before {
+            content: "✔ ";
+        }
+
+        #slider1 { background-color: rgb(2, 38, 26); }
+        #slider2 { background-color: rgb(5, 60, 42); }
+        #slider3 { background-color: rgb(26, 115, 85); }
+        #slider4 { background-color: rgb(39, 145, 110); }
+        #slider5 { background-color: rgb(97, 207, 170); }
+
+        /* Mostrar la primera sección si no hay target */
+        body:has(section:target) #slider1 {
+            display: none;
+        }
+
+        body:not(:has(section:target)) #slider1 {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Slider 1: Portada -->
+    <section id="slider1">
+        <h1>Diseño de Presentaciones Web</h1>
+        <p>HTML y CSS trabajará sin JavaScript</p>
+        <img src="Diseno-web-con-HTML5-Abril-2560x950-1.jpg" alt="Presentaciones web" width="80%">
+        <nav>
+            <a href="#slider2">Siguiente</a>
+        </nav>
+    </section>
+
+    <!-- Slider 2: Contenido Educativo -->
+    <section id="slider2">
+        <h2>¿Qué aprenderás?</h2>
+        <ul>
+            <li>Crear presentaciones sin PowerPoint</li>
+            <li>Usar solo HTML y CSS</li>
+            <li>Insertar imágenes y videos</li>
+            <li>Diseño limpio y moderno</li>
+        </ul>
+        <nav>
+            <a href="#slider1">Anterior</a>
+            <a href="#slider3">Siguiente</a>
+        </nav>
+    </section>
+
+    <!-- Slider 3: Imagen ilustrativa -->
+    <section id="slider3">
+        <h2>Ejemplo de Diapositiva Visual</h2>
+        <p>Una imagen puede ayudar a comunicar mejor tus ideas</p>
+        <img src="1d.jpeg" alt="Logo HTML" width="60%">
+        <nav>
+            <a href="#slider2">Anterior</a>
+            <a href="#slider4">Siguiente</a>
+        </nav>
+    </section>
+
+    <!-- Slider 4: Video -->
+    <section id="slider4">
+        <h2>Video: ¿Qué es HTML?</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/MJkdaVFHrto?si=PAjMnnuz5Hemfcg9"
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+            gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <nav>
+            <a href="#slider3">Anterior</a>
+            <a href="#slider5">Siguiente</a>
+        </nav>
+    </section>
+
+    <!-- Slider 5: Despedida -->
+    <section id="slider5">
+        <h2>¡GRACIAS POR SU ATENCIÓN!</h2>
+        <p>Si quieres más información, puedes consultar la siguiente página:
+            <a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank">
+                MDN Web Docs
+            </a>
+        </p>
+        <nav>
+            <a href="#slider4">Anterior</a>
+            <a href="#slider1">Inicio</a>
+        </nav>
+    </section>
+</body>
+</html>
